@@ -103,7 +103,30 @@ list.forEach((item) {
 
 使用var声明的变量为推测类型，类型在声明后不可更改；使用dynamic声明后，变量为动态类型，可以赋值其他变量类型。
 
+
+
 ### final与const声明变量的区别？
 
-使用const声明常量在编译时就确认了值，所以其右值不可以为变量；使用final在运行时创建常量，右值可以为变量。
+1. 使用const声明常量在编译时就确认了值，所以其右值不可以为变量；使用final在运行时创建常量，右值可以为变量。
+2. const编译时确认其右值为字面量或字面量的集合，其后代元素如有变量也需要是使用const声明的，是**深**常量（可传递的）；final是运行时，是**浅**常量（不可传递的）。样例如下：
 
+```dart
+// 其子sub为map，map的元素可被修改，这点和java还有js的const比较类似
+void main() {
+  var subMap = {};
+  final map = {'sub': subMap};
+  subMap['a'] = 1;
+  print(map); // {sub: {a: 1}}
+}
+```
+
+个人理解如果使用const则意味着告诉编译器，我需要在编译时计算右值（进行RHS查询）
+
+
+
+### 创建对象new是否可以省略
+
+简单来说，dart2.x没区别，stackoverflow相关问答
+
+- [do you need to use the new keyword in dart](https://stackoverflow.com/questions/50091389/do-you-need-to-use-the-new-keyword-in-dart)
+- [using-the-new-keyword-in-flutter](https://stackoverflow.com/questions/50668487/using-the-new-keyword-in-flutter)
