@@ -16,6 +16,16 @@
 1. 可枚举使用`is`
 2. 使用`object.runtimeType`判断
 
+### Map取其成员变量
+
+```dart
+void main() {
+    var map = Map();
+    map['a'] = 1;
+    map.a = 2; // 这个会报错，map array支持使用[]进行访问，.号是用于访问成员变量
+}
+```
+
 #### final与const声明变量的区别？
 
 1. 使用const声明常量在编译时就确认了值，所以其右值不可以为变量；使用final在运行时创建常量，右值可以为变量。
@@ -77,3 +87,58 @@
       var l1 = Line(a, b);
       l1 = Line(b, 1);
       ```
+
+
+
+### 有点特色的流程控制语句
+
+1. Switch-case
+
+```dart
+// 支持fall-through
+var command = 'CLOSED';
+switch (command) {
+  case 'CLOSED': // Empty case falls through.
+  case 'NOW_CLOSED':
+    // Runs for both CLOSED and NOW_CLOSED.
+    executeNowClosed();
+    break;
+}
+
+// fall-through-with-label
+var command = 'CLOSED';
+switch (command) {
+  case 'CLOSED':
+    executeClosed();
+    continue nowClosed;
+  // Continues executing at the nowClosed label.
+
+  nowClosed:
+  case 'NOW_CLOSED':
+    // Runs for both CLOSED and NOW_CLOSED.
+    executeNowClosed();
+    break;
+}
+```
+
+
+
+### 异常捕获
+
+```dart
+// try-on-catch-e
+try {
+  breedMoreLlamas();
+} on OutOfLlamasException {
+    // on
+} on Exception catch (e) {
+    // on catch e
+} catch (e) {
+	// default catch
+  print('Error: $e'); // Handle the exception first.
+} finally {
+    // finally
+  cleanLlamaStalls(); // Then clean up.
+}
+```
+
