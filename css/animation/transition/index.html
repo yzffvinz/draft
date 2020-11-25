@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <title>Transition</title>
+</head>
+
+<body class="flex-center">
+    <h1>transition</h1>
+    <div class="box-keeper flex-center">
+        <div class="box-wrapper flex-center">
+            <div class="box flex-center trans-1s">1s</div>
+            duration
+        </div>
+        <div class="box-wrapper flex-center">
+            <div class="box flex-center trans-all-1s">
+                all 1s
+            </div>
+            property duration
+        </div>
+        <div class="box-wrapper flex-center">
+            <div class="box flex-center trans-1s-1s">1s 1s</div>
+            duration delay
+        </div>
+        <div class="box-wrapper flex-center">
+            <div class="box flex-center trans-all-1s-1s">all 1s 1s</div>
+            property duration delay
+        </div>
+        <div class="box-wrapper flex-center">
+            <div class="box flex-center trans-all-1s-1s-easein">all 1s 1s easein</div>
+            property duration <br />delay timing-function
+        </div>
+        <div class="box-wrapper flex-center">
+            <div class="box flex-center trans-all-1s-easein">all 1s easein</div>
+            property duration <br /> timing-function
+        </div>
+        <div class="box-wrapper flex-center">
+            <div class="box flex-center trans-all-easein">all easein</div>
+            property timing-function
+        </div>
+        <div class="box-wrapper flex-center">
+            <div class="box flex-center trans-easein-all">easein all</div>
+            timing-function property
+        </div>
+        <div class="box-wrapper flex-center">
+            <div class="box flex-center trans-1s-easein">1s easein</div>
+            duration timing-function
+        </div>
+    </div>
+    可以看到这个trasition是非常的灵活，只有duration是必需的，否则会失效。然后传入的其他参数会自动匹配到相应的子属性。
+    <div style="margin-top: 20px; border: 10px dashed lightblue; width: 100%;"></div>
+    <h2>transform: scale(2) translateX(100px);</h2>
+    <div class="box-wrapper box-matrix">
+        <div class="box trans-scale2-translate10 flex-center">
+            scale2 translate100
+        </div>
+        视觉上右移了200px`
+    </div>
+    <h2>transform: translateX(100px) scale(2);</h2>
+    <div class="box-wrapper box-matrix">
+        <div class="box trans-translate10-scale2 flex-center">
+            translate100 scale2
+        </div>
+        视觉上右移了100px
+    </div>
+    <div style="margin-top: 20px; border: 10px dashed lightblue; width: 100%;"></div>
+</body>
+
+</html>

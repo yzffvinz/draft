@@ -1,0 +1,85 @@
+.box:hover {
+    transform: scale(2);
+    /* transform: scale(2) translateX(100px); */
+    /* transform: translateX(100px) scale(2); */
+}
+
+body {
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-keeper {
+    flex-wrap: wrap;
+}
+
+.box-wrapper {
+    margin-right: 30px;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.box {
+    flex-direction: column;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    background: lightblue;
+}
+
+.trans-1s {
+    transition: 1s;
+}
+
+.trans-all-1s {
+    transition: all 1s;
+}
+
+.trans-1s-1s {
+    transition: 1s 1s;
+}
+
+.trans-all-1s-1s {
+    transition: all 1s 1s;
+}
+
+.trans-all-1s-1s-easein {
+    transition: all 1s 1s ease-in;
+}
+
+.trans-all-1s-easein {
+    transition: all 1s ease-in;
+}
+
+.trans-all-easein {
+    transition: all ease-in;
+}
+
+.trans-easein-all {
+    transition: ease-in all;
+}
+
+.trans-1s-easein {
+    transition: 1s ease-in;
+}
+
+.box-matrix {
+    justify-content: center;
+}
+
+.trans-scale2-translate10:hover {
+    transform: scale(2) translate(100px);
+}
+
+.trans-translate10-scale2:hover {
+    transform: translate(100px) scale(2);
+}

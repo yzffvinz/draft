@@ -1,0 +1,89 @@
+<!-- TODO: 半成品 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            height: 666px;
+            width: 1182px;
+            border-radius: 36px;
+            border: 1px solid;
+            overflow: hidden;
+        }
+        
+        .slider {
+            transform: rotate(-30deg);
+        }
+        
+        .game-gallery {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 600px;
+            margin-top: 180px;
+            transition: transform 10s;
+        }
+        
+        .game-gallery:hover {
+            transform: translateX(-1000px);
+        }
+        
+        .icon-wrapper {
+            margin-left: 45px;
+            width: 267px;
+            height: 267px;
+            border-radius: calc(267px * 0.23);
+            border: 1px solid;
+        }
+        
+        .icon-wrapper:nth-child(even) {
+            margin-top: 45px;
+            transform: translate(133px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="slider">
+            <div class="game-gallery">
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+                <div class="icon-wrapper">1</div>
+                <div class="icon-wrapper">2</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
