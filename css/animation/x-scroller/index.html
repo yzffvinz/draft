@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X Scroller</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-left: 200px;
+        }
+        .wrapper {
+            width: 200px;
+            overflow: hidden;
+            display: flex;
+        }
+        .wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .content {
+            font-size: 52px;
+            white-space: nowrap;
+            animation: 5s xscroll linear infinite normal;
+        }
+
+        @keyframes xscroll {
+            from {
+                transform: translateX(0%);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <span>那些年我们仰卧河底，你把所有的远方称作河流。</span>
+            <span>那些年我们仰卧河底，你把所有的远方称作河流。</span>
+        </div>
+    </div>
+</body>
+</html>
