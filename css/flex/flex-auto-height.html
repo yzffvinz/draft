@@ -20,7 +20,6 @@
 
             width: 300px;
             height: 100px;
-            /* overflow: hidden; */
 
             display: flex;
         }
@@ -32,9 +31,6 @@
 
         .flex-item {
             font-size: 20px;
-            width: 75px;
-            height: 75px;
-            margin-right: 20px;
             border: 1px dashed;
         }
     </style>
@@ -50,6 +46,9 @@
             const flexItem = document.createElement('div');
             flexItem.className = 'flex-item';
             flexItem.innerText = `word-${index}`;
+            flexItem.style.height = (65 + index * 5) + 'px';
+            flexItem.style.width = (65 + index * 5) + 'px';
+            flexItem.style.marginRight = (100 - index * 10) + 'px';
             wrapper.appendChild(flexItem);
         });
     </script>
