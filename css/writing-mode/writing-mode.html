@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Mode</title>
+    <style>
+        body {
+            padding: 10px;
+            width: 100vw;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+        
+        .wrapper {
+            /* 
+                horizontal-tb
+                vertical-rl
+                vertical-lr
+                sideways-rl
+                sideways-lr
+             */
+            /* writing-mode: sideways-rl; */
+        }
+
+        p {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>writing-mode 属性</h1>
+    <h2>
+        定义了文本水平或垂直排布以及在块级元素中文本的行进方向。为整个文档设置书时，应在根元素上设置它（对于 HTML 文档应该在 html 元素上设置）
+    </h2>
+    <div class="wrapper">
+        <p>text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1text1</p>
+        <p>text2</p>
+        <p>text3</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <style>
+        /**
+        dataset = {
+            current: [15, 11, 17, 25, 37],
+            total: [25, 26, 40, 45, 68],
+        }
+        */
+        .bargraph {
+            display: grid;
+            width: 150px;
+            height: 100px;
+            padding: 10px;
+            transform: scaleY(3);
+            grid-template-columns: repeat(5, 20%);
+        }
+        .bargraph div {
+            margin: 0 2px;
+        }
+        .bargraph div:nth-child(1) {
+            background: linear-gradient(to bottom, transparent 75%, #37c 0, #37c 85%, #3c7 0);
+        }
+        .bargraph div:nth-child(2) {
+            background: linear-gradient(to bottom, transparent 74%, #37c 0, #37c 89%, #3c7 0);
+        }
+        .bargraph div:nth-child(3) {
+            background: linear-gradient(to bottom, transparent 60%, #37c 0, #37c 83%, #3c7 0);
+        }
+        .bargraph div:nth-child(4) {
+            background: linear-gradient(to bottom, transparent 55%, #37c 0, #37c 75%, #3c7 0);
+        }
+        .bargraph div:nth-child(5) {
+            background: linear-gradient(to bottom, transparent 32%, #37c 0, #37c 63%, #3c7 0);
+        }
+        .piegraph {
+            display: inline-block;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-image: conic-gradient(#37c 30deg, #3c7 30deg, #3c7 65deg, orange 65deg, orange 110deg, #f73 110deg, #f73 200deg, #ccc 200deg);
+        }
+        .color-wheel {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: conic-gradient(
+                hsl(360, 100%, 50%),
+                hsl(315, 100%, 50%),
+                hsl(270, 100%, 50%),
+                hsl(225, 100%, 50%),
+                hsl(180, 100%, 50%),
+                hsl(135, 100%, 50%),
+                hsl(90, 100%, 50%),
+                hsl(45, 100%, 50%),
+                hsl(0, 100%, 50%)
+            );
+        }
+        .dashed {
+            width: 300px;
+            height: 1px;
+            background-image: repeating-linear-gradient(
+                90deg,
+                black 0px,
+                black 5px,
+                transparent 5px,
+                transparent 10px
+            );
+        }
+        .round {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+        }
+        .repeat-conic {
+            background-image: repeating-conic-gradient(
+                hsl(360, 100%, 50%) 0,
+                hsl(315, 100%, 50%) 3deg,
+                hsl(270, 100%, 50%) 6deg,
+                hsl(225, 100%, 50%) 9deg,
+                hsl(180, 100%, 50%) 12deg,
+                hsl(135, 100%, 50%) 15deg,
+                hsl(90, 100%, 50%) 18deg,
+                hsl(45, 100%, 50%) 21deg,
+                hsl(0, 100%, 50%) 24deg
+            );
+        }
+        .repeat-radial {
+            background-image: repeating-radial-gradient(
+                circle at center, red 0, blue 10px, green 20px
+            );
+        }
+        .radial {
+            background:
+                radial-gradient(ellipse at top, #e66465, transparent),
+                radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+        }
+    </style>
+</head>
+<body>
+    <div class="bargraph">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="piegraph">
+    </div>
+    <div class="dashed"></div>
+    <div class="color-wheel"></div>
+    <div class="round repeat-conic"></div>
+    <div class="round repeat-radial"></div>
+    <div class="round radial"></div>
+</body>
+</html>

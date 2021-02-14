@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图表</title>
+    <style>
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: bottom;
+        }
+        .line {
+            height: 100vh;
+            display: flex;
+            flex-shrink: 0;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .total {
+            background-color: rgb(67, 120, 199);
+        }
+        .current {
+            background-color: rgb(123, 202, 128);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    </div>
+    <script>
+        function renderLines(data) {
+            const len = data.current.length;
+            const wid = 100 / (1.5 * len + 0.5);
+            const max = Math.max(...data.total);
+            const ratio = 100 / max;
+
+            console.log(len);
+
+            const container = document.querySelector('.container');
+            for (let i = 0; i < len; i++) {
+                const div = document.createElement('div');
+                div.className = 'line';
+
+                const total = document.createElement('div');
+                total.className = 'total';
+                total.style.width = '100%';
+                total.style.height = ratio * (data.total[i] - data.current[i]) + 'vh';
+                div.appendChild(total);
+
+                const current = document.createElement('div');
+                current.className = 'current';
+                current.style.width = '100%';
+                current.style.height = ratio * data.current[i] + 'vh';
+                div.appendChild(current);
+
+                div.style.width = wid + 'vw';
+                div.style.marginLeft = 0.5 * wid + 'vw';
+
+                container.style.paddingRight = 0.5 * wid + 'vw';
+                container.appendChild(div);
+            }
+        }
+        const dataset = {
+            current: [15, 11, 17, 25, 37, 39, 60, 11, 17, 25, 37, 39, 60],
+            total: [25, 26, 40, 45, 68, 79, 81, 26, 40, 45, 68, 79, 81]
+        };
+
+        renderLines(dataset);
+    </script>
+</body>
+
+</html>
