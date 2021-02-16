@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lean-slider: steps</title>
+    <style>
+        @keyframes rowup {
+            from {
+                transform: translateX(0%);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+        .box {
+            height: 666px;
+            width: 1182px;
+            border-radius: 36px;
+            border: 1px solid;
+            overflow: hidden;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .icon {
+            width: 267px;
+            height: 267px;
+            border-radius: calc(267px * 0.23);
+            background-image: conic-gradient(
+                hsl(360, 100%, 50%),
+                hsl(315, 100%, 50%),
+                hsl(270, 100%, 50%),
+                hsl(225, 100%, 50%),
+                hsl(180, 100%, 50%),
+                hsl(135, 100%, 50%),
+                hsl(90, 100%, 50%),
+                hsl(45, 100%, 50%),
+                hsl(0, 100%, 50%)
+            );
+        }
+
+        .lean-box {
+            display: flex;
+            transform: rotate(-30deg);
+        }
+
+        .wrapper {
+            margin-top: 180px;
+            display: flex;
+            flex-wrap: nowrap;
+            animation: rowup 5s linear infinite;
+        }
+
+        .wrapper .icon:nth-child(even) {
+            margin-top: 45px;
+            transform: translate(155px);
+        }
+
+        .icon-pair {
+            margin-left: 45px;
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 66px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="lean-box">
+            <div class="wrapper">
+                <div class="icon-pair">
+                    <div class="icon">1</div>
+                    <div class="icon">2</div>
+                </div>
+                <div class="icon-pair">
+                    <div class="icon">3</div>
+                    <div class="icon">4</div>
+                </div>
+                <div class="icon-pair">
+                    <div class="icon">5</div>
+                    <div class="icon">6</div>
+                </div>
+                <div class="icon-pair">
+                    <div class="icon">7</div>
+                    <div class="icon">8</div>
+                </div>
+                <div class="icon-pair">
+                    <div class="icon">1</div>
+                    <div class="icon">2</div>
+                </div>
+                <div class="icon-pair">
+                    <div class="icon">3</div>
+                    <div class="icon">4</div>
+                </div>
+                <div class="icon-pair">
+                    <div class="icon">5</div>
+                    <div class="icon">6</div>
+                </div>
+                <div class="icon-pair">
+                    <div class="icon">7</div>
+                    <div class="icon">8</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
