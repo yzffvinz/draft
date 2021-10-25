@@ -108,7 +108,4 @@ function pickCard(x): any {
 }
 
 // this 相关
-
 ```
-
-## 
